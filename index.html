@@ -116,7 +116,7 @@
     <div class="main">
         <div class="profile-container">
             <div class="profile">
-                <img class="profileimage" src="IMG-20220219-WA0017.jpg" alt="profile">
+                <img class="profileimage" src="ProfilePicture.jpeg" alt="profile">
             </div>
         </div>
 
@@ -154,7 +154,7 @@
                     <tr>
                         <td class="tg-0pky">Date &amp; Time</td>
                         <td class="tg-0pky">:</td>
-                        <td class="tg-0pky" onload= "showTime()" id="dtime"></td>
+                        <td class="tg-0pky" onload= "showTime()" id="dtime">31/12/2022 <br> 11:59:59 AM</td>
                     </tr>
                 </tbody>
             </table>
@@ -177,10 +177,12 @@
 
     function showTime() {
         let date = new Date();
-        let hour = date.getHours(); // 0 - 23
-        let minutes = date.getMinutes(); // 0 -59
-        let seconds = date.getSeconds(); // 0 -59
-
+        let hour = date.getHours(); 
+        let minutes = date.getMinutes(); 
+        let seconds = date.getSeconds(); 
+        let dates = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
         let session = 'AM';
 
         if (hour === 0) {
@@ -191,14 +193,17 @@
             hour = hour - 12;
             session = 'PM';
         }
+        if (month<10){
+            month = "0"+month;
+        }
 
         hour = (hour < 10) ? '0' + hour : hour;
         minutes = (minutes < 10) ? '0' + minutes : minutes;
         seconds = (seconds < 10) ? '0' + seconds : seconds;
 
-        let time = hour + ':' + minutes + ':' + seconds + ' ' + session;
+        let time = dates +"/" + month + "/" + year +"<br>" + hour + ':' + minutes + ':' + seconds + ' ' + session;
 
-        document.querySelector('#dtime').innerText = time;
+        document.querySelector('#dtime').innerHTML = time;
 
 
         setTimeout(showTime, 1000);
