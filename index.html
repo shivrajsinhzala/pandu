@@ -154,7 +154,7 @@
                     <tr>
                         <td class="tg-0pky">Date &amp; Time</td>
                         <td class="tg-0pky">:</td>
-                        <td class="tg-0pky" id="dtime"></td>
+                        <td class="tg-0pky" onload= "showTime()" id="dtime"></td>
                     </tr>
                 </tbody>
             </table>
@@ -173,17 +173,40 @@
         </div>
     </div>
     <script>
-    
-setInterval(function ()  {
-            var today = new Date();
-            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var dateTime = date + "  " + time;
+    window.onload = () => {
 
-            dtbox = document.getElementById('dtime');
-            dtime.innerText = dateTime;
-            
-        }, 1000)
+    function showTime() {
+        let date = new Date();
+        let hour = date.getHours(); // 0 - 23
+        let minutes = date.getMinutes(); // 0 -59
+        let seconds = date.getSeconds(); // 0 -59
+
+        let session = 'AM';
+
+        if (hour === 0) {
+            hour = 12;
+        }
+
+        if (hour > 12) {
+            hour = hour - 12;
+            session = 'PM';
+        }
+
+        hour = (hour < 10) ? '0' + hour : hour;
+        minutes = (minutes < 10) ? '0' + minutes : minutes;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        let time = hour + ':' + minutes + ':' + seconds + ' ' + session;
+
+        document.querySelector('#dtime').innerText = time;
+
+
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+}
 
 
     </script>
