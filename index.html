@@ -109,10 +109,30 @@
             justify-content: center;
             background-color: #00A9B4;
         }
+        .bus{
+            width: 100%;
+            font-size: 1.5rem;
+            margin-bottom: 2em;
+            color: black;
+        }
+        .bus::after{
+            content: '';
+            width: 7%;
+            border: rgb(255, 127, 53) solid 2px;
+            border-radius: 1px;
+            position: absolute;
+            transform: translate(-75px , 30px);
+        }
+
+        
     </style>
 </head>
 
 <body>
+    <div class="bus">
+        Bus Pass
+    </div>
+
     <div class="main">
         <div class="profile-container">
             <div class="profile">
