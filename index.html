@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        html {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main {
+            position: relative;
+            height: 100vh;
+            width: 75vw;
+            border: 1px grey solid;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .profile {
+            margin: 20px;
+            width: 125px;
+            height: 150px;
+            border: 1px grey solid;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profileimage {
+            height: 100%;
+            width: 100%;
+        }
+
+        .profile-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .namebox {
+            border-radius: 7px;
+            width: 95%;
+            height: 8%;
+            background-color: #00A9B4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-family: 'Cabin', sans-serif;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .tg {
+            text-align: left;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tg td {
+            border-style: none;
+            border-width: 1px;
+            font-family: 'Cabin', sans-serif;
+            font-size: 20px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-family: 'Cabin', sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .table {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 20px 0px
+        }
+
+        .tb {
+
+            text-align: center;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00A9B4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="profile-container">
+            <div class="profile">
+                <img class="profileimage" src="https://media.istockphoto.com/vectors/profile-picture-vector-illustration-vector-id587805156?s=612x612" alt="profile">
+            </div>
+        </div>
+
+
+        <div class="namebox">PrathamKumar R. Pandya</div>
+
+        <div class="table">
+            <table class="tg">
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky">GR No.</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">110176</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky">Stream</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">ICT-FOT1 (MU)</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky">Sem</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">SEM-4,SEM-3</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky">Mobile No.</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">6352757912</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky">Pick-up</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">Morbi - Swagat Hall</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-0pky">Date &amp; Time</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky" id="dtime">12/12/2222<br>12:12:12 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tb">
+            <table class="tg">
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky">Shift</td>
+                        <td class="tg-0pky">:</td>
+                        <td class="tg-0pky">Shift - 2 (Pick Ups)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+    
+setInterval(function ()  {
+            var today = new Date();
+            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + "    " + + time;
+
+            dtbox = document.getElementById('dtime');
+            dtime.innerText = dateTime;
+            
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>
